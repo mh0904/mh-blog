@@ -6,8 +6,7 @@ import path from "path";
 export default defineConfig({
   // 替换成你自己的 GitHub 地址
   site: "https://mh0904.github.io",
-  base: "/mh-blog",
-
+  base: process.env.NODE_ENV === "production" ? "/mh-blog" : "/",
   // 显式指定为静态模式，防止它乱跑
   output: "static",
 
