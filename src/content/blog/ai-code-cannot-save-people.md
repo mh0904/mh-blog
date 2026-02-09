@@ -52,7 +52,8 @@ AI 生成的代码，从计算机科学的角度看是满分的。但它根本�
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -69,7 +70,7 @@ body {
   height: 100vh;
 
   background: #ff0000; /* 纯红 */
-  color: #ffff00;      /* 纯黄 */
+  color: #ffff00; /* 纯黄 */
 
   font-size: 48px;
   font-weight: bold;
@@ -86,15 +87,14 @@ body {
 #emergency-btn:active {
   background: #cc0000;
 }
-
 ```
 
 ```js
 // main.js
 
-const btn = document.getElementById('emergency-btn');
+const btn = document.getElementById("emergency-btn");
 
-btn.addEventListener('click', () => {
+btn.addEventListener("click", () => {
   // 尝试先走“智能路径”
   trySendEmergencySignal();
 });
@@ -105,8 +105,8 @@ function trySendEmergencySignal() {
     controller.abort();
   }, 3000); // 3 秒，不能再多了
 
-  fetch('https://example.com/api/emergency', {
-    method: 'POST',
+  fetch("https://example.com/api/emergency", {
+    method: "POST",
     signal: controller.signal,
   })
     .then(() => {
@@ -124,9 +124,8 @@ function trySendEmergencySignal() {
 
 function dial120() {
   // 不提示、不解释、不弹窗
-  window.location.href = 'tel:120';
+  window.location.href = "tel:120";
 }
-
 ```
 
 我还在 catch 语句里加了一段逻辑：**如果网络超时，不要弹窗报错，而是直接调用系统的电话拨号盘，填入 120。**
@@ -163,7 +162,7 @@ AI 永远学不会心疼用户。它没有痛觉，没有焦虑，没有爱。�
 
 这些细微的、关乎人性的决策，才是 1 和 0 之间那道无法跨越的鸿沟。
 
-***
+---
 
 在这个代码泛滥的年代，**克制**反而成了一种美德。
 

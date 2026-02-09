@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.12",
+    "prettier-plugin-astro": "^0.14.1",
     "wrangler": "^4.54.0"
   }
 }

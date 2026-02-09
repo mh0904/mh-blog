@@ -11,7 +11,7 @@ const postStats = {};
 
 <BaseLayout
   title="博客"
-  description="技术分享、开发心得、学习笔记 - ErpanOmer 的技术博客"
+  description="技术分享、开发心得、学习笔记 - mh 的技术博客"
 >
   <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
     <!-- Header -->
@@ -30,7 +30,9 @@ const postStats = {};
           <path
             stroke-linecap="round"
             stroke-linejoin="round"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          >
+          </path>
         </svg>
         <span>返回首页</span>
       </a>
@@ -42,7 +44,10 @@ const postStats = {};
     <div class="space-y-8">
       {
         posts.map((post) => (
-          <a href={`/blog/${post.slug}`} class="group block">
+          <a
+            href={`/blog/${post.slug}`}
+            class="group block"
+          >
             <article class="flex flex-col sm:flex-row gap-4 sm:gap-6 p-4 -mx-4 rounded-xl hover:bg-zinc-900/50 transition-colors">
               {post.data.cover && (
                 <div class="aspect-video flex-[0.5] flex-shrink-0 rounded-lg overflow-hidden bg-zinc-800">
@@ -107,13 +112,15 @@ const postStats = {};
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
-              ><path
+            >
+              <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
                 d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.175 0l-3.976 2.888c-.783.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-              ></path></svg
-            >
+              >
+              </path>
+            </svg>
           </div>
           <div>
             <h3 class="text-base font-bold text-gray-900 dark:text-white">
@@ -123,9 +130,10 @@ const postStats = {};
               详细的 🚀<a
                 class="text-yellow-400 underline inline-block"
                 href="https://github.com/mhrealm/erpanomer.github.io/blob/master/README.md"
-                target="_blank">部署文档</a
-              > 以帮你安排好！ 你的 Star 是对我持续开发的最大鼓励！点击右侧按钮前往
-              GitHub 支持我。
+                target="_blank"
+              >
+                部署文档
+              </a> 以帮你安排好！ 你的 Star 是对我持续开发的最大鼓励！点击右侧按钮前往 GitHub 支持我。
             </p>
           </div>
         </div>
@@ -144,7 +152,8 @@ const postStats = {};
           >
             <path
               d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-            ></path>
+            >
+            </path>
           </svg>
           <span>欢迎 Star !</span>
           <svg
@@ -152,12 +161,15 @@ const postStats = {};
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            ><path
+          >
+            <path
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg
-          >
+              d="M14 5l7 7m0 0l-7 7m7-7H3"
+            >
+            </path>
+          </svg>
         </a>
       </div>
     </section>

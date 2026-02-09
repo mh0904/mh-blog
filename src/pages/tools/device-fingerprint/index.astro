@@ -36,9 +36,7 @@ import UsageCode from "./code.md";
         <p class="max-w-2xl mx-auto text-lg text-slate-400">
           仅利用浏览器特征生成稳定、唯一的设备 ID。
           <br />
-          <span class="text-cyan-400 font-medium"
-            >无 Cookie · 无 LocalStorage · 零权限获取</span
-          >
+          <span class="text-cyan-400 font-medium">无 Cookie · 无 LocalStorage · 零权限获取</span>
         </p>
       </div>
 
@@ -52,9 +50,7 @@ import UsageCode from "./code.md";
             id="result-container"
             class="w-full max-w-3xl text-center hidden opacity-0 transition-all duration-700 transform translate-y-4"
           >
-            <div
-              class="uppercase tracking-widest text-xs font-semibold text-slate-500 mb-2"
-            >
+            <div class="uppercase tracking-widest text-xs font-semibold text-slate-500 mb-2">
               Unique Device Identifier
             </div>
             <div class="relative group">
@@ -66,9 +62,7 @@ import UsageCode from "./code.md";
                 id="device-id-display"
                 class="relative bg-slate-900 rounded-xl px-4 py-6 md:py-8 break-all font-mono text-xl md:text-4xl text-cyan-50 tracking-wider shadow-inner border border-slate-700"
               >
-                <span class="animate-pulse text-slate-500 text-sm"
-                  >正在计算设备指纹...</span
-                >
+                <span class="animate-pulse text-slate-500 text-sm">正在计算设备指纹...</span>
               </div>
               <button
                 id="copy-btn"
@@ -85,26 +79,38 @@ import UsageCode from "./code.md";
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  ><rect x="9" y="9" width="13" height="13" rx="2" ry="2"
-                  ></rect><path
-                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-                  ></path></svg
                 >
+                  <rect
+                    x="9"
+                    y="9"
+                    width="13"
+                    height="13"
+                    rx="2"
+                    ry="2"
+                  >
+                  </rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
               </button>
             </div>
 
-            <div
-              class="flex justify-center gap-6 mt-6 text-sm text-slate-400 font-mono"
-            >
+            <div class="flex justify-center gap-6 mt-6 text-sm text-slate-400 font-mono">
               <div title="熵值越高，唯一性越强">
                 <span>熵值估计:</span>
-                <span id="entropy-score" class="text-emerald-400 font-bold"
-                  >--</span
-                > bits
+                <span
+                  id="entropy-score"
+                  class="text-emerald-400 font-bold"
+                >
+                  --
+                </span> bits
               </div>
               <div>
                 <span>生成耗时:</span>
-                <span id="gen-time" class="text-indigo-400 font-bold">--</span> ms
+                <span
+                  id="gen-time"
+                  class="text-indigo-400 font-bold"
+                >
+                  --
+                </span> ms
               </div>
             </div>
           </div>
@@ -139,16 +145,28 @@ import UsageCode from "./code.md";
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  ><rect width="18" height="18" x="3" y="3" rx="2" ry="2"
-                  ></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path
-                    d="m20.4 14.5-2.9-2.9a2.5 2.5 0 0 0-3.5 0l-7 7"></path></svg
                 >
+                  <rect
+                    width="18"
+                    height="18"
+                    x="3"
+                    y="3"
+                    rx="2"
+                    ry="2"
+                  >
+                  </rect><circle
+                    cx="8.5"
+                    cy="8.5"
+                    r="1.5"
+                  >
+                  </circle><path d="m20.4 14.5-2.9-2.9a2.5 2.5 0 0 0-3.5 0l-7 7"></path>
+                </svg>
               </div>
               <h3 class="font-bold text-slate-200">Canvas 指纹</h3>
             </div>
             <div class="prose prose-invert text-xs text-slate-400 mb-3">
-              通过在隐藏画布上绘制混合字体、Emoji 和混合模式图形，捕捉不同 GPU
-              和 渲染引擎的细微差异。
+              通过在隐藏画布上绘制混合字体、Emoji 和混合模式图形，捕捉不同 GPU 和
+              渲染引擎的细微差异。
             </div>
             <div
               class="flex-1 bg-white/5 rounded-lg flex items-center justify-center overflow-hidden border border-white/10"
@@ -163,7 +181,9 @@ import UsageCode from "./code.md";
             <div class="mt-2 text-right">
               <span
                 class="text-[10px] text-slate-500 font-mono"
-                id="signal-canvas-hash"></span>
+                id="signal-canvas-hash"
+              >
+              </span>
             </div>
           </div>
 
@@ -183,16 +203,17 @@ import UsageCode from "./code.md";
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  ><path d="M2 10v3"></path><path d="M6 6v11"></path><path
-                    d="M10 3v18"></path><path d="M14 8v7"></path><path
-                    d="M18 5v13"></path><path d="M22 10v3"></path></svg
                 >
+                  <path d="M2 10v3"></path><path d="M6 6v11"></path><path d="M10 3v18"></path><path
+                    d="M14 8v7"
+                  >
+                  </path><path d="M18 5v13"></path><path d="M22 10v3"></path>
+                </svg>
               </div>
               <h3 class="font-bold text-slate-200">Audio 指纹</h3>
             </div>
             <div class="prose prose-invert text-xs text-slate-400 mb-3">
-              利用 OfflineAudioContext
-              渲染无声振荡波形并进行压缩，捕捉音频硬件及驱动的特征差异。
+              利用 OfflineAudioContext 渲染无声振荡波形并进行压缩，捕捉音频硬件及驱动的特征差异。
             </div>
             <div
               class="min-h-24 flex-1 flex items-end justify-center gap-1 pb-4 px-4 bg-white/5 rounded-lg border border-white/10"
@@ -291,8 +312,10 @@ import UsageCode from "./code.md";
             <div class="mt-2 text-right">
               <span
                 class="text-[10px] text-slate-500 font-mono"
-                id="signal-audio-hash">等待生成...</span
+                id="signal-audio-hash"
               >
+                等待生成...
+              </span>
             </div>
           </div>
 
@@ -312,48 +335,84 @@ import UsageCode from "./code.md";
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  ><rect x="2" y="3" width="20" height="14" rx="2" ry="2"
-                  ></rect><line x1="8" y1="21" x2="16" y2="21"></line><line
+                >
+                  <rect
+                    x="2"
+                    y="3"
+                    width="20"
+                    height="14"
+                    rx="2"
+                    ry="2"
+                  >
+                  </rect><line
+                    x1="8"
+                    y1="21"
+                    x2="16"
+                    y2="21"
+                  >
+                  </line><line
                     x1="12"
                     y1="17"
                     x2="12"
-                    y2="21"></line></svg
-                >
+                    y2="21"
+                  >
+                  </line>
+                </svg>
               </div>
               <h3 class="font-bold text-slate-200">硬件特征</h3>
             </div>
             <div class="prose prose-invert text-xs text-slate-400 mb-3">
-              综合 CPU
-              核心并发数、设备内存、系统语言、时区等相对稳定的硬件特征。
+              综合 CPU 核心并发数、设备内存、系统语言、时区等相对稳定的硬件特征。
             </div>
             <div
               class="flex flex-col px-3 py-2 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-slate-300 space-y-1.5 scrollbar-thin scrollbar-thumb-slate-600 scrollbar-track-transparent"
             >
-              <div id="hw-cores" class="flex justify-between gap-2">
+              <div
+                id="hw-cores"
+                class="flex justify-between gap-2"
+              >
                 <span class="text-slate-500">核心数:</span>
                 <span class="text-emerald-400">--</span>
               </div>
-              <div id="hw-mem" class="flex justify-between gap-2">
+              <div
+                id="hw-mem"
+                class="flex justify-between gap-2"
+              >
                 <span class="text-slate-500">内存:</span>
                 <span class="text-emerald-400">--</span>
               </div>
-              <div id="hw-platform" class="flex justify-between gap-2">
+              <div
+                id="hw-platform"
+                class="flex justify-between gap-2"
+              >
                 <span class="text-slate-500">平台:</span>
                 <span class="text-emerald-400">--</span>
               </div>
-              <div id="hw-language" class="flex justify-between gap-2">
+              <div
+                id="hw-language"
+                class="flex justify-between gap-2"
+              >
                 <span class="text-slate-500">语言:</span>
                 <span class="text-emerald-400">--</span>
               </div>
-              <div id="hw-colordepth" class="flex justify-between gap-2">
+              <div
+                id="hw-colordepth"
+                class="flex justify-between gap-2"
+              >
                 <span class="text-slate-500">色深:</span>
                 <span class="text-emerald-400">--</span>
               </div>
-              <div id="hw-pixeldepth" class="flex justify-between gap-2">
+              <div
+                id="hw-pixeldepth"
+                class="flex justify-between gap-2"
+              >
                 <span class="text-slate-500">像素深度:</span>
                 <span class="text-emerald-400">--</span>
               </div>
-              <div id="hw-timezone" class="flex justify-between gap-2">
+              <div
+                id="hw-timezone"
+                class="flex justify-between gap-2"
+              >
                 <span class="text-slate-500">时区偏移:</span>
                 <span class="text-emerald-400">--</span>
               </div>
@@ -376,10 +435,12 @@ import UsageCode from "./code.md";
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  ><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path
-                    d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"
-                  ></path></svg
                 >
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path
+                    d="M2 12l10 5 10-5"
+                  >
+                  </path>
+                </svg>
               </div>
               <h3 class="font-bold text-slate-200">WebGL 指纹</h3>
             </div>
@@ -389,19 +450,31 @@ import UsageCode from "./code.md";
             <div
               class="flex-1 flex flex-col px-3 py-2 bg-white/5 rounded-lg border border-white/10 text-xs font-mono text-slate-300 space-y-1 whitespace-normal"
             >
-              <div id="webgl-vendor" class="truncate whitespace-normal">
+              <div
+                id="webgl-vendor"
+                class="truncate whitespace-normal"
+              >
                 <span class="text-slate-500">供应商:</span>
                 <span class="text-purple-400 whitespace-normal">--</span>
               </div>
-              <div id="webgl-renderer" class="truncate whitespace-normal">
+              <div
+                id="webgl-renderer"
+                class="truncate whitespace-normal"
+              >
                 <span class="text-slate-500">渲染器:</span>
                 <span class="text-purple-400">--</span>
               </div>
-              <div id="webgl-version" class="truncate whitespace-normal">
+              <div
+                id="webgl-version"
+                class="truncate whitespace-normal"
+              >
                 <span class="text-slate-500">版本:</span>
                 <span class="text-purple-400">--</span>
               </div>
-              <div id="webgl-texture" class="truncate whitespace-normal">
+              <div
+                id="webgl-texture"
+                class="truncate whitespace-normal"
+              >
                 <span class="text-slate-500">最大纹理:</span>
                 <span class="text-purple-400">--</span>
               </div>
@@ -424,13 +497,21 @@ import UsageCode from "./code.md";
                   stroke-width="2"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  ><polyline points="4 7 4 4 20 4 20 7"></polyline><line
+                >
+                  <polyline points="4 7 4 4 20 4 20 7"></polyline><line
                     x1="9"
                     y1="20"
                     x2="15"
-                    y2="20"></line><line x1="12" y1="4" x2="12" y2="20"
-                  ></line></svg
-                >
+                    y2="20"
+                  >
+                  </line><line
+                    x1="12"
+                    y1="4"
+                    x2="12"
+                    y2="20"
+                  >
+                  </line>
+                </svg>
               </div>
               <h3 class="font-bold text-slate-200">字体检测</h3>
             </div>
@@ -442,7 +523,12 @@ import UsageCode from "./code.md";
             >
               <div id="font-count">
                 <span class="text-slate-500">检测到:</span>
-                <span class="text-pink-400" id="font-count-value">--</span>
+                <span
+                  class="text-pink-400"
+                  id="font-count-value"
+                >
+                  --
+                </span>
                 <span class="text-slate-500">种字体</span>
               </div>
               <div
@@ -460,9 +546,7 @@ import UsageCode from "./code.md";
       <div class="max-w-4xl mx-auto mt-16 space-y-16 text-slate-400">
         <!-- Section 1: Core Logic -->
         <section class="border-l-4 border-cyan-500 pl-6 space-y-4">
-          <h3 class="text-2xl font-bold text-white mb-4">
-            核心原理 (How it works)
-          </h3>
+          <h3 class="text-2xl font-bold text-white mb-4">核心原理 (How it works)</h3>
           <p class="leading-relaxed text-slate-300">
             现代浏览器为了优化性能，会利用底层硬件（GPU、声卡）加速渲染和计算。由于硬件厂商、驱动版本、操作系统抗锯齿策略的不同，哪怕是同样的文字和图形，在不同设备上渲染出的二进制数据也会存在肉眼极难察觉的微小差异。
           </p>
@@ -492,31 +576,24 @@ import UsageCode from "./code.md";
             <li class="flex items-start gap-2">
               <span class="text-purple-400 mt-1">🎮</span>
               <div>
-                <strong class="text-purple-400">WebGL 指纹</strong> - GPU 供应商、渲染器型号及
-                WebGL 参数
+                <strong class="text-purple-400">WebGL 指纹</strong> - GPU 供应商、渲染器型号及 WebGL 参数
               </div>
             </li>
             <li class="flex items-start gap-2">
               <span class="text-pink-400 mt-1">📝</span>
               <div>
-                <strong class="text-pink-400">字体检测</strong> - 系统已安装字体列表（20
-                种常见字体）
+                <strong class="text-pink-400">字体检测</strong> - 系统已安装字体列表（20 种常见字体）
               </div>
             </li>
           </ul>
-          <div
-            class="bg-cyan-900/20 border border-cyan-500/30 rounded-lg p-4 mt-4"
-          >
+          <div class="bg-cyan-900/20 border border-cyan-500/30 rounded-lg p-4 mt-4">
             <div class="flex items-center gap-2 mb-2">
               <span class="text-cyan-400 text-xl">🔐</span>
               <strong class="text-cyan-300">熵值估计</strong>
             </div>
             <p class="text-sm text-slate-300">
-              5 种信号源组合可提供约 <strong class="text-cyan-400"
-                >38 bits</strong
-              > 的熵值，理论上可以区分约 <strong class="text-cyan-400"
-                >2740 亿</strong
-              >台不同设备。
+              5 种信号源组合可提供约 <strong class="text-cyan-400">38 bits</strong> 的熵值，理论上可以区分约
+              <strong class="text-cyan-400">2740 亿</strong>台不同设备。
             </p>
           </div>
         </section>
@@ -529,8 +606,10 @@ import UsageCode from "./code.md";
             <a
               href="https://github.com/mhrealm/erpanomer.github.io/tree/master/src/pages/tools/device-fingerprint/fingerprint-sdk.js"
               target="_blank"
-              class="text-emerald-400 hover:underline">查看 GitHub 源码仓库</a
+              class="text-emerald-400 hover:underline"
             >
+              查看 GitHub 源码仓库
+            </a>
           </p>
 
           <CodeBlock>
@@ -540,33 +619,29 @@ import UsageCode from "./code.md";
 
         <!-- Section 3: Privacy & Limits -->
         <section class="border-l-4 border-yellow-500 pl-6 space-y-4">
-          <h3 class="text-2xl font-bold text-white mb-4">
-            隐私与局限 (Privacy & Limits)
-          </h3>
+          <h3 class="text-2xl font-bold text-white mb-4">隐私与局限 (Privacy & Limits)</h3>
           <ul class="space-y-4 text-slate-300">
             <li class="bg-black/20 p-4 rounded-lg">
               <div class="font-bold text-cyan-400 mb-1">✅ 隐私友好</div>
               <div class="text-sm">
-                SDK 仅采集设备硬件属性（如
-                GPU、声卡处理特征）和系统配置，不收集任何
+                SDK 仅采集设备硬件属性（如 GPU、声卡处理特征）和系统配置，不收集任何
                 IP、地理位置或具体设备账户等敏感隐私信息。
               </div>
             </li>
             <li class="bg-black/20 p-4 rounded-lg">
               <div class="font-bold text-cyan-400 mb-1">✅ 稳定持久</div>
               <div class="text-sm">
-                不依赖 <code>cookie</code> 或 <code>localStorage</code
-                >，清理缓存或使用隐身模式通常不会改变
+                不依赖 <code>cookie</code> 或 <code>
+                  localStorage
+                </code>，清理缓存或使用隐身模式通常不会改变
                 ID。采集逻辑已针对夏令时等环境波动进行了稳定性优化。
               </div>
             </li>
             <li class="bg-black/20 p-4 rounded-lg border border-yellow-500/20">
               <div class="font-bold text-yellow-400 mb-1">⚠ 抗指纹浏览器</div>
               <div class="text-sm">
-                部分隐私浏览器（如 Tor、Brave）或 Safari
-                的“阻止跨站跟踪”功能会故意为 Canvas/Audio
-                添加随机噪点。这会导致每次生成的 ID
-                都不一样。这是正常的隐私保护机制。
+                部分隐私浏览器（如 Tor、Brave）或 Safari 的“阻止跨站跟踪”功能会故意为 Canvas/Audio
+                添加随机噪点。这会导致每次生成的 ID 都不一样。这是正常的隐私保护机制。
               </div>
             </li>
           </ul>
@@ -588,19 +663,20 @@ import UsageCode from "./code.md";
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
-                ><path
+              >
+                <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
                   stroke-width="2"
                   d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.175 0l-3.976 2.888c-.783.57-1.838-.197-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
-                ></path></svg
-              >
+                >
+                </path>
+              </svg>
             </div>
             <div>
               <h3 class="text-base font-bold text-white">觉得这个工具好用？</h3>
               <p class="text-sm text-slate-400 mt-0.5">
-                你的 Star 是对我持续开发的最大鼓励！点击右侧按钮前往 GitHub
-                支持我。
+                你的 Star 是对我持续开发的最大鼓励！点击右侧按钮前往 GitHub 支持我。
               </p>
             </div>
           </div>
@@ -616,10 +692,12 @@ import UsageCode from "./code.md";
             <svg
               class="w-5 h-5 text-yellow-500 fill-current"
               viewBox="0 0 24 24"
-              ><path
-                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
-              ></path></svg
             >
+              <path
+                d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+              >
+              </path>
+            </svg>
             <span>Give me a Star</span>
           </a>
         </div>
