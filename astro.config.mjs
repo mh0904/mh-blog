@@ -9,9 +9,7 @@ export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/mh-blog" : "/",
   // 显式指定为静态模式，防止它乱跑
   output: "static",
-
   integrations: [tailwind(), sitemap()],
-
   vite: {
     resolve: {
       alias: {
@@ -19,5 +17,4 @@ export default defineConfig({
       },
     },
   },
-  // 先不要加 markdown 插件和 image service，等页面跑通了再加
 });

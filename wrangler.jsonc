@@ -1,41 +1,41 @@
 {
-    "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "erpanomer-website",
-    "main": "./dist/_worker.js/index.js",
-    // 更新为今天的日期
-    "compatibility_date": "2025-12-25",
-    "compatibility_flags": [
-        "nodejs_compat"
-    ],
-    "assets": {
-        "binding": "ASSETS",
-        "directory": "./dist"
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mh-website",
+  "main": "./dist/_worker.js/index.js",
+  // 更新为今天的日期
+  "compatibility_date": "2025-12-25",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "VIEWS",
+      "id": "3e8f221b3ceb4c0c8078b61810cd4579"
     },
-    "kv_namespaces": [
-        {
-            "binding": "VIEWS",
-            "id": "3e8f221b3ceb4c0c8078b61810cd4579"
-        },
-        {
-            "binding": "RATE_LIMIT",
-            "id": "3e8f221b3ceb4c0c8078b61810cd4579"
-        },
-        {
-            "binding": "JUEJIN_KV",
-            "id": "3e8f221b3ceb4c0c8078b61810cd4579"
-        }
-    ],
-    "d1_databases": [
-        {
-            "binding": "BLOG_DB",
-            "database_name": "erpanomer-blog-db",
-            "database_id": "1e228212-c7c7-4943-a9d8-b20b74ff8ce8"
-        }
-    ],
-    "observability": {
-        "enabled": true
+    {
+      "binding": "RATE_LIMIT",
+      "id": "3e8f221b3ceb4c0c8078b61810cd4579"
     },
-    "vars": {
-        "PUBLIC_CLOUDINARY_CLOUD_NAME": "dkh81cvyt"
+    {
+      "binding": "JUEJIN_KV",
+      "id": "3e8f221b3ceb4c0c8078b61810cd4579"
     }
+  ],
+  "d1_databases": [
+    {
+      "binding": "BLOG_DB",
+      "database_name": "mh-blog-db",
+      "database_id": "1e228212-c7c7-4943-a9d8-b20b74ff8ce8"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  },
+  "vars": {
+    "PUBLIC_CLOUDINARY_CLOUD_NAME": "dkh81cvyt"
+  }
 }
