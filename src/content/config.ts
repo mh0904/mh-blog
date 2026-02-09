@@ -3,7 +3,7 @@ import { defineCollection, z } from "astro:content";
 const blog = defineCollection({
   type: "content",
   schema: z.object({
-    author: z.string().default("ErpanOmer"),
+    author: z.string().default("Mh"),
     lastModified: z.coerce.date(),
     title: z.string(),
     description: z.string(),
@@ -12,6 +12,21 @@ const blog = defineCollection({
     cover: z.string().optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+  }),
+});
+
+const reactnote = defineCollection({
+  type: "content", // 显式指定类型
+  schema: z.object({
+    author: z.string().default("Mh"),
+    lastModified: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    title: z.string(),
+    pubDate: z.date(),
+    description: z.string(),
+    tags: z.array(z.string()).default([]),
+    cover: z.string().optional(),
+    draft: z.boolean().optional().default(false),
   }),
 });
 
@@ -29,4 +44,4 @@ const projects = defineCollection({
   }),
 });
 
-export const collections = { blog, projects };
+export const collections = { blog, projects, "react-note": reactnote };

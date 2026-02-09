@@ -1,12 +1,11 @@
 ---
-import { Font } from "astro:assets";
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
-import BackToTop from "@/components/BackToTop.astro";
-import { getCldImageUrl } from "astro-cloudinary/helpers";
-import me from "@/images/me.jpg";
 import "@/app.css";
+import BackToTop from "@/components/BackToTop.astro";
+import Footer from "@/components/Footer.astro";
+import Header from "@/components/Header.astro";
+import me from "@/images/me.jpg";
 import { CldOgImage } from "astro-cloudinary";
+import { getCldImageUrl } from "astro-cloudinary/helpers";
 
 const { env } = Astro.locals.runtime || {};
 
@@ -20,7 +19,7 @@ interface Props {
 }
 
 const {
-  title = "ErpanOmer | Web Frontend Engineer",
+  title = "Mh | Web Frontend Engineer",
   description = "资深 Web 前端工程师，专注于 Shopify 独立站开发与 Cloudflare 边缘计算。",
   image = new URL(me.src, Astro.url.origin).toString(),
   type = "website",
@@ -28,7 +27,7 @@ const {
   tags = [],
 } = Astro.props;
 
-const siteTitle = "ErpanOmer";
+const siteTitle = "Mh";
 const fullTitle = title.includes(siteTitle) ? title : `${title} | ${siteTitle}`;
 const url = new URL(Astro.url);
 const lang = "zh-CN";
@@ -37,31 +36,57 @@ const lang = "zh-CN";
 const viewCount = Astro.locals.viewCount || 0;
 ---
 
-<html lang={lang} class="dark scroll-smooth">
+<html
+  lang={lang}
+  class="dark scroll-smooth"
+>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin />
-    <link rel="dns-prefetch" href="https://res.cloudinary.com" />
-    <!-- <link 
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&subset=latin&display=optional" 
-  rel="stylesheet"> -->
-
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      rel="preconnect"
+      href="https://res.cloudinary.com"
+      crossorigin
+    />
+    <link
+      rel="dns-prefetch"
+      href="https://res.cloudinary.com"
+    />
     <!-- Primary Meta Tags -->
     <title>{fullTitle}</title>
-    <meta name="title" content={fullTitle} />
-    <meta name="description" content={description} />
+    <meta
+      name="title"
+      content={fullTitle}
+    />
+    <meta
+      name="description"
+      content={description}
+    />
     <meta
       name="keywords"
-      content={tags.length > 0
-        ? tags.join(", ")
-        : "ErpanOmer, Web前端, Shopify, Cloudflare, 前端开发"}
+      content={tags.length > 0 ? tags.join(", ") : "Mh, Web前端, Shopify, Cloudflare, 前端开发"}
     />
-    <meta name="author" content="ErpanOmer" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0d1117" />
+    <meta
+      name="author"
+      content="Mh"
+    />
+    <meta
+      name="robots"
+      content="index, follow"
+    />
+    <meta
+      name="theme-color"
+      content="#0d1117"
+    />
 
     <CldOgImage
       src="me_kknemi"
@@ -72,16 +97,40 @@ const viewCount = Astro.locals.viewCount || 0;
     />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content={type} />
-    <meta property="og:url" content={url} />
-    <meta property="og:title" content={fullTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:site_name" content={siteTitle} />
-    <meta property="og:locale" content={lang} />
+    <meta
+      property="og:type"
+      content={type}
+    />
+    <meta
+      property="og:url"
+      content={url}
+    />
+    <meta
+      property="og:title"
+      content={fullTitle}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:site_name"
+      content={siteTitle}
+    />
+    <meta
+      property="og:locale"
+      content={lang}
+    />
 
     <!-- Twitter -->
-    <meta property="twitter:url" content={url} />
-    <meta property="twitter:description" content={description} />
+    <meta
+      property="twitter:url"
+      content={url}
+    />
+    <meta
+      property="twitter:description"
+      content={description}
+    />
 
     <!-- Article specific -->
     {
@@ -92,14 +141,20 @@ const viewCount = Astro.locals.viewCount || 0;
             content={publishedTime.toISOString()}
           />
           {tags.map((tag) => (
-            <meta property="article:tag" content={tag} />
+            <meta
+              property="article:tag"
+              content={tag}
+            />
           ))}
         </>
       )
     }
 
     <!-- Favicon -->
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="sitemap"
+      href="/sitemap-index.xml"
+    />
     <link
       rel="apple-touch-icon"
       type="image/png"
@@ -112,15 +167,41 @@ const viewCount = Astro.locals.viewCount || 0;
       sizes="128x128"
       href="/favicon-128x128.png"
     />
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="/favicon-64x64.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="/favicon-48x48.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png"
+    />
     <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
-    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="manifest"
+      href="/site.webmanifest"
+    />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href={url} />
+    <link
+      rel="canonical"
+      href={url}
+    />
     <slot name="head" />
   </head>
   <body class="min-h-screen flex flex-col bg-gh-bg text-gh-text">
@@ -144,22 +225,19 @@ const viewCount = Astro.locals.viewCount || 0;
           inLanguage: lang,
           publisher: {
             "@type": "Person",
-            name: "ErpanOmer",
+            name: "Mh",
           },
         },
         {
           "@type": "Person",
-          name: "ErpanOmer",
+          name: "Mh",
           url: new URL(Astro.url.origin).toString(),
           image: getCldImageUrl({
             src: "me_kknemi",
             width: 500,
             height: 500,
           }),
-          sameAs: [
-            "https://github.com/ErpanOmer",
-            "https://juejin.cn/user/3878732754331096",
-          ],
+          sameAs: ["https://github.com/mhrealm", "https://juejin.cn/user/712139267641950"],
           jobTitle: "Web Frontend Engineer",
           description: description,
         },

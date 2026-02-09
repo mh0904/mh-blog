@@ -6,13 +6,15 @@
   "editor.trimAutoWhitespace": true, // 自动删除行尾多余空格
   // 保存时自动格式化 + 修复错误
   "editor.formatOnSave": true, // 保存时格式化
+  "prettier.printWidth": 100, //最大行宽为 100
+  "prettier.htmlWhitespaceSensitivity": "ignore",
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit"
   },
   // 为不同文件指定默认格式化工具
   "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode" // Astro 文件用官方插件格式化
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode" // JS 文件用 Prettier
@@ -34,7 +36,7 @@
   "javascript.format.enable": false,
   "typescript.format.enable": false,
   "css.format.enable": false,
-  // Astro 相关配置
-  "astro.enableLanguageServer": true,
-  "astro.typescript.intellisenseMode": "typescript"
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ]
 }
