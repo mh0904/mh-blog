@@ -4,19 +4,15 @@ import sitemap from '@astrojs/sitemap';
 import path from 'path';
 
 export default defineConfig({
-  // 1. 必填：换成你自己的 GitHub Pages 域名
-  site: 'https://your-username.github.io', 
+  // 替换成你自己的 GitHub 地址
+  site: 'https://mh0904.github.io', 
   
-  // 2. 删掉 output: 'server'。删掉后它默认就是 static 模式。
+  // 显式指定为静态模式，防止它乱跑
+  output: 'static', 
 
   integrations: [
     tailwind(), 
-    sitemap({
-      serialize(item) {
-        item.lastmod = new Date();
-        return item;
-      },
-    })
+    sitemap()
   ],
 
   vite: {
@@ -25,12 +21,6 @@ export default defineConfig({
         '@': path.resolve('src')
       }
     }
-  },
-
-  // 如果报错找不到这两个 .mjs 文件，先像这样注释掉这一块
-  /*
-  markdown: {
-    remarkPlugins: [remarkModifiedTime, remarkReadingTime],
-  },
-  */
-})
+  }
+  // 先不要加 markdown 插件和 image service，等页面跑通了再加
+});
