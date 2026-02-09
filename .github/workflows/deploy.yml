@@ -2,12 +2,12 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # 或者是你的主分支名
+    branches: [main] # 确保这是你的主分支名
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pages: write # 必须有这个权限
+  id-token: write # 必须有这个权限
 
 jobs:
   build:
@@ -16,5 +16,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install, build, and upload
-        uses: withastro/action@v3
-        # 如果你使用 pnpm，可以参考 Astro 官网添加 pnpm setup
+        uses: withastro/action@v3 # 使用 Astro 官方 Action 会自动处理上传
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # 这步才会真正让链接出现
