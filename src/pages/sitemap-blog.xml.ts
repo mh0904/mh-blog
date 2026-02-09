@@ -47,10 +47,7 @@ export async function GET() {
     for (const project of projects) {
       if (project.link && project.link.startsWith("/")) {
         // Exclude specific project paths
-        if (
-          project.link === "/projects/learning/" ||
-          project.link === "/projects/leetcode/"
-        ) {
+        if (project.link === "/projects/learning/" || project.link === "/projects/leetcode/") {
           continue;
         }
 
