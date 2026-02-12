@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
@@ -10,7 +11,7 @@ export default defineConfig({
   base: "/",
   // 显式指定为静态模式，防止它乱跑
   output: "static",
-  integrations: [tailwind(), sitemap(), mdx()],
+  integrations: [tailwind(), sitemap(), mdx(), react()],
   vite: {
     resolve: {
       alias: {

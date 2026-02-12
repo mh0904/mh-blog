@@ -6,8 +6,6 @@ import { getCollection } from "astro:content";
 const posts = (await getCollection("functions", ({ data }) => !data.draft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
-
-const postStats = {};
 ---
 
 <!-- 传递配置和数据给通用的 PostListLayout 组件 -->
@@ -19,10 +17,5 @@ const postStats = {};
   backButton={{
     text: "返回首页",
     href: "/",
-  }}
-  promoText={{
-    title: "喜欢我的函数库吗？你也可以部署一份属于你的第三空间！",
-    description:
-      '详细的 🚀<a class="text-yellow-400 underline inline-block" href="https://github.com/mhrealm/erpanomer.github.io/blob/master/README.md" target="_blank">部署文档</a> 以帮你安排好！ 你的 Star 是对我持续开发的最大鼓励！点击右侧按钮前往 GitHub 支持我。',
   }}
 />

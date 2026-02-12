@@ -1,42 +1,46 @@
 {
-  // 基础编辑器配置
-  "editor.tabSize": 2, // 缩进为 2 个空格（Astro 推荐）
-  "editor.insertSpaces": true, // 使用空格而非制表符
-  "editor.detectIndentation": false, // 禁用自动检测缩进，强制用上面的配置
-  "editor.trimAutoWhitespace": true, // 自动删除行尾多余空格
-  // 保存时自动格式化 + 修复错误
-  "editor.formatOnSave": true, // 保存时格式化
-  "prettier.printWidth": 100, //最大行宽为 100
+  // ===================== 基础编辑器核心配置 =====================
+  // 设置编辑器的缩进大小为 2 个空格（替代 Tab 键）
+  "editor.tabSize": 2,
+  // 禁用编辑器自动检测文件的缩进规则（比如从文件中读取 tabSize），强制使用上面配置的 2 空格
+  "editor.detectIndentation": false,
+  // 自动删除每行末尾的多余空白字符（避免代码里有无效空格）
+  "editor.trimAutoWhitespace": true,
+  // ===================== 保存时的自动操作配置 =====================
+  // 开启“保存文件时自动格式化代码”功能（依赖 Prettier 等格式化工具）
+  "editor.formatOnSave": true,
+  // 覆盖 Prettier 的默认配置：设置代码每行的最大字符宽度为 100（超过则自动换行）
+  "prettier.printWidth": 100,
+  // 覆盖 Prettier 的默认配置：忽略 HTML/Astro 等文件的空白符敏感度（避免因空格导致格式化异常）
   "prettier.htmlWhitespaceSensitivity": "ignore",
-  "editor.unicodeHighlight.ambiguousCharacters": false, // 禁用对可能引起混淆的字符的高亮
+  // 禁用编辑器对“易混淆字符”的高亮（比如全角/半角数字、字母），减少不必要的视觉干扰
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  // 保存时自动执行的代码修复动作（需要 ESLint 等工具配合）
   "editor.codeActionsOnSave": {
+    // 显式开启“自动修复所有可修复的代码错误”（如 ESLint 规则、语法问题）
     "source.fixAll": "explicit",
+    // 显式开启“自动整理导入语句”（比如排序 import、删除未使用的导入）
     "source.organizeImports": "explicit"
   },
-  // 为不同文件指定默认格式化工具
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // ===================== 针对 MDX 文件的专属配置 =====================
+  "[mdx]": {
+    // MDX 文件的换行阈值：当行字符数达到 95 时自动换行
+    "editor.wordWrapColumn": 95,
+    // MDX 文件的换行规则：按照上面设置的 95 字符阈值换行
+    "editor.wordWrap": "wordWrapColumn"
+    // 注：原配置此处有多余逗号，已删除（JSON 不允许末尾逗号，会导致解析报错）
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode" // JS 文件用 Prettier
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode" // TS 文件用 Prettier
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode" // JSON 文件用 Prettier
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode" // CSS 文件用 Prettier
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode" // MD 文件用 Prettier
-  },
-  // 禁用内置的格式化工具，避免冲突
+  // ===================== 格式化工具冲突规避配置 =====================
+  // 启用 Prettier 作为默认格式化工具（需安装 Prettier 插件）
   "prettier.enable": true,
+  // 禁用 VS Code 内置的 JavaScript 格式化工具（避免和 Prettier 冲突）
   "javascript.format.enable": false,
+  // 禁用 VS Code 内置的 TypeScript 格式化工具（避免和 Prettier 冲突）
   "typescript.format.enable": false,
+  // 禁用 VS Code 内置的 CSS 格式化工具（避免和 Prettier 冲突）
+  // 注：SCSS/LESS 会继承此配置，无需单独禁用
   "css.format.enable": false,
+  // 让 Prettier 识别并格式化 .astro 后缀的文件（适配 Astro 框架）
   "prettier.documentSelectors": [
     "**/*.astro"
   ]

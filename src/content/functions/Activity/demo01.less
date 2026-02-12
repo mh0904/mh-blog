@@ -1,0 +1,48 @@
+// 定义混合
+.opacity-transition() {
+  -webkit-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+// 第一版样式
+.version1 {
+  .fade-item {
+    opacity: 0;
+    .opacity-transition();
+    z-index: 10;
+  }
+
+  .fade-enter-done {
+    opacity: 1;
+    .opacity-transition();
+    z-index: 100;
+  }
+}
+
+// 第二版样式
+.version2 {
+  .question {
+    .opacity-transition();
+  }
+  .fade-item {
+    z-index: 10;
+  }
+  .fade-enter-done {
+    z-index: 100;
+  }
+}
+
+// 第三版本的样式
+.version3 {
+  .question {
+    .opacity-transition();
+  }
+  .fade-item {
+    z-index: 10;
+  }
+  .fade-enter-done {
+    z-index: 100;
+  }
+}
